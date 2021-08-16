@@ -3,14 +3,11 @@ package hello.core.singleton;
 import hello.core.AppConfig;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import static org.assertj.core.api.Assertions.*;
-
 
 public class SingletonTest {
 
@@ -44,6 +41,7 @@ public class SingletonTest {
         SingletonService singletonService1 = SingletonService.getInstance();
         SingletonService singletonService2 = SingletonService.getInstance();
         System.out.println("singletonService1 = " + singletonService1);
+
         System.out.println("singletonService2 = " + singletonService2);
 
         assertThat(singletonService1).isSameAs(singletonService2);
